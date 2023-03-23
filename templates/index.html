@@ -1,0 +1,40 @@
+{% extends 'layout.html' %} {% load static %} {% block content%}
+<!--Main layout-->
+<main style="margin-top: 58px;">
+    <div class="container pt-4">
+        <!-- content -->
+        {% for Courses in courses %}
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-hover">
+                                <div class="card-body">
+                                    <img class="img-cap" href="{% url 'view' Courses.pk %}" src="{{Courses.image.url }}" width="100" height="100" alt="Card image cap">
+
+                                    <h5 class="card-title"><a href="{% url 'view' Courses.pk %}">{{Courses.title}}</a></h5>
+                                    <div class="p">
+                                        <p class="card-text ">{{Courses.subject}}</p>
+                                        <button type="button" class="btn btn-link"><a href="{% url 'view' Courses.pk %}">more info</a></button>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">{{Courses.date_created}}</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <br/> {% endfor %}
+
+
+    </div>
+</main>
+{% endblock %}

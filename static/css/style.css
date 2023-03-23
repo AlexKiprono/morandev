@@ -1,0 +1,123 @@
+body {
+    background-color: #fbfbfb;
+}
+
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+    }
+}
+
+p {
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    flex-direction: row-reverse;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Float four columns side by side */
+
+.column {
+    width: 25%;
+    padding: 0 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding in columns */
+
+.row {
+    margin: 0 -5px;
+    justify-content: row;
+    /* grid-template-columns: 200px 200px 200px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+*/
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: left !;
+}
+
+
+/* Style the counter cards */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* this adds the "card" effect */
+    text-align: center;
+    background-color: #f1f1f1;
+    min-width: none;
+    display: flex;
+}
+
+
+/* Responsive columns - one column layout (vertical) on small screens */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+        /* display: flex; */
+        /* float: left; */
+    }
+}
+
+.img-cap {
+    margin: 20;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 40px-10px rgba(12, 141, 205, 0.927);
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0;
+    /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+}

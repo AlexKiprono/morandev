@@ -1,0 +1,9 @@
+{
+    "cSpell.words": [
+        "categorychoices"
+    ],
+    "python.analysis.extraPaths": [
+        "./Courses",
+        "./Courses"
+    ]
+}

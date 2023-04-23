@@ -66,12 +66,3 @@ p {
     overflow-y: auto;
     /* Scrollable contents if viewport is shorter than content. */
 }
-
-.card-columns {
-    @include media-breakpoint-only(lg) {
-        column-count: 4;
-    }
-    @include media-breakpoint-only(xl) {
-        column-count: 5;
-    }
-}
